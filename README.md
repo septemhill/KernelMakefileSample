@@ -3,6 +3,9 @@ KernelModSample
 
 Kernel module sample with Makefile sample
 
+There is *EMBEDDED* option in makefie, you can set it and assign you
+kernel header position and your cross compiler to make it.
+
 Make project and install module to you host:
 
 ```
