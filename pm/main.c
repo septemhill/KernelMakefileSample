@@ -6,6 +6,9 @@
 #include <linux/timer.h>
 #include <linux/kfifo.h>   // for kfifo
 #include <pm1.h>           // for "show" function
+#include <dev1.h>          // for "dev_display" function
+#include <dri1.h>          // for "backup" function
+#include <sys1.h>
 
 static struct task_struct *thread1;
 static struct task_struct *thread2;
@@ -24,6 +27,8 @@ int thread_fn1(void *data)
     if (kthread_should_stop()) break;
 
     show(count++);
+    dev_display();
+    back(1000);
 
     do {
       set_current_state(TASK_INTERRUPTIBLE);
