@@ -9,6 +9,7 @@
 #include <dev1.h>          // for "dev_display" function
 #include <dri1.h>          // for "backup" function
 #include <sys1.h>
+#include <cmd1.h>
 
 static struct task_struct *thread1;
 static struct task_struct *thread2;
@@ -34,6 +35,8 @@ int thread_fn1(void *data)
       set_current_state(TASK_INTERRUPTIBLE);
       timeout = schedule_timeout(3 * HZ);
     } while (timeout);
+
+    cmd_reset();
   }
 
   return 0;

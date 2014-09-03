@@ -10,10 +10,10 @@ obj-m				:= $(TARGET).o
 obj-y				:= pm/ dev/ dri/ sysdep/
 
 $(TARGET)-y			:= pm/main.o
-$(TARGET)-$(CONFIG_PM_MOD)	+= pm/pm.o
-$(TARGET)-$(CONFIG_DEV_MOD)	+= dev/dev.o
-$(TARGET)-$(CONFIG_DRI_MOD)	+= dri/dri.o
-$(TARGET)-$(CONFIG_SYSDEP_MOD)	+= sysdep/sys.o
+$(TARGET)-$(CONFIG_PM_MOD)	+= pm/built-in.o
+$(TARGET)-$(CONFIG_DEV_MOD)	+= dev/built-in.o
+$(TARGET)-$(CONFIG_DRI_MOD)	+= dri/built-in.o
+$(TARGET)-$(CONFIG_SYSDEP_MOD)	+= sysdep/built-in.o
 
 ifeq ($(EMBEDDED), y)
 else

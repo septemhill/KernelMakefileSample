@@ -1,2 +1,1 @@
-obj-y	+= dev.o
-dev-y	:= dev1.o dev2.o
+obj-y	+= dev1.o dev2.o
