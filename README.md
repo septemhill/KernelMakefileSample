@@ -17,3 +17,9 @@ Clean project and remove module from your host:
 ```
 make clean
 ```
+
+Install your modules to specify location
+
+```
+make install
+```
